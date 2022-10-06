@@ -54,7 +54,7 @@ const ChatRoom: NextPage = () => {
   return (
     <div className="bg-black h-[calc(100vh-64px)]">
       <Layout>
-        <div className="pt-32">
+        <div className="py-24">
           <div className="p-10 border border-purple-300 rounded-3xl m-14">
             <div className="flex items-center justify-center">
               <div className="grow">
@@ -68,7 +68,7 @@ const ChatRoom: NextPage = () => {
               </div>
             </div>
             <div className="flex flex-col bg-gray-800 rounded-3xl mt-10">
-              <div className="h-[500px] p-5 overflow-auto">
+              <div className="h-[450px] p-5 overflow-hidden">
                 <ChatPop />
               </div>
 

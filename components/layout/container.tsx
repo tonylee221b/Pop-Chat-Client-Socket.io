@@ -7,9 +7,7 @@ interface Props {
 const Container: NextPage<Props> = ({ children }) => {
   return (
     <div className="w-screen full__height">
-      <div className="h-2/3">
-        <div className="w-full h-full bg-black">{children}</div>
-      </div>
+      <div className="w-full h-full bg-black">{children}</div>
     </div>
   )
 }
