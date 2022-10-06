@@ -68,7 +68,7 @@ const ChatRoom: NextPage = () => {
               </div>
             </div>
             <div className="flex flex-col bg-gray-800 rounded-3xl mt-10">
-              <div className="h-[450px] p-5 overflow-hidden">
+              <div className="h-[450px] p-5 overflow-auto overscroll-auto">
                 <ChatPop />
               </div>
 

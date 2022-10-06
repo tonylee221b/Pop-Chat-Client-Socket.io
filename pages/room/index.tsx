@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { nanoid } from 'nanoid'
 
 import Layout from '../../components/layout/main'
+import Container from '../../components/layout/container'
 import { useSocket, Room } from '../../context/socket.context'
 
 import CreateRoom from '../../components/room/CreateRoom'
@@ -44,7 +45,7 @@ const Room: NextPage = () => {
   }
 
   return (
-    <div className="bg-black h-[calc(100vh-64px)]">
+    <Container>
       <Layout>
         <div className="pt-32">
           <div className="border border-purple-300 rounded-3xl p-5 max-h-[900px] min-h-[50vh] flex flex-col">
@@ -118,7 +119,7 @@ const Room: NextPage = () => {
           </div>
         </div>
       </Layout>
-    </div>
+    </Container>
   )
 }
 
