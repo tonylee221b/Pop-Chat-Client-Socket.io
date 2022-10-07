@@ -70,7 +70,7 @@ const ChatRoom: NextPage = () => {
                 className="text-white bg-red-500 px-3 py-1 rounded-lg hover:cursor-pointer hover:scale-105 transition-transform duration-75"
                 onClick={handleLeaveClick}
               >
-                Leave Room
+                Leave
               </div>
             </div>
 
