@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Raleway;
+  }
+}
+
 @layer components {
   .btn {
     @apply text-black text-lg bg-white rounded-full px-5 py-2 hover:ease-out duration-300 transition hover:cursor-pointer hover:text-purple-300;
