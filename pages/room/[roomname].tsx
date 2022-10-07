@@ -62,9 +62,7 @@ const ChatRoom: NextPage = () => {
             {/* Title */}
             <div className="flex items-center m-3">
               <div className="grow">
-                <p className="text-purple-400 text-5xl font-bold">
-                  Roomname: {roomname}
-                </p>
+                <p className="text-purple-400 text-5xl font-bold">{roomname}</p>
               </div>
               <div
                 className="text-white bg-red-500 px-3 py-1 rounded-lg hover:cursor-pointer hover:scale-105 transition-transform duration-75"
