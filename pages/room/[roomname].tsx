@@ -55,9 +55,9 @@ const ChatRoom: NextPage = () => {
   return (
     <Container>
       <Layout>
-        <div className="flex h-full">
+        <div className="flex h-full py-auto">
           {/* ChatRoom Container */}
-          <div className="flex max-h-[400px] md:max-h-[600px] lg:max-h-[800px] my-auto mx-52 md:mx-40 lg:mx-32 w-full h-full">
+          <div className="flex max-h-[500px] md:max-h-[500px] lg:max-h-[600px] mx-32 md:mx-36 lg:mx-44 w-full h-full">
             {/* ChatRoom Outline */}
             <div className="border border-purple-300 flex text-white m-auto w-full h-full rounded-3xl p-5">
               {/* Content Container */}
@@ -65,7 +65,7 @@ const ChatRoom: NextPage = () => {
                 {/* Title */}
                 <div className="flex items-center m-3">
                   <div className="grow">
-                    <p className="text-purple-400 text-4xl">
+                    <p className="text-purple-400 text-2xl">
                       Roomname: {roomname}
                     </p>
                   </div>
