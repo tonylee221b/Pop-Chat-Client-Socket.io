@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 
 interface Props {
-  children: JSX.Element
+  children: JSX.Element | JSX.Element[]
 }
 
 const ChatLayout: NextPage<Props> = ({ children }) => {
