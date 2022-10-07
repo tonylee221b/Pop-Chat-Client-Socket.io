@@ -57,7 +57,7 @@ const ChatRoom: NextPage = () => {
       <Layout>
         <div className="flex h-full">
           {/* ChatRoom Container */}
-          <div className="flex max-h-[800px] my-auto mx-32 w-full h-full">
+          <div className="flex max-h-[400px] md:max-h-[600px] lg:max-h-[800px] my-auto mx-52 md:mx-40 lg:mx-32 w-full h-full">
             {/* ChatRoom Outline */}
             <div className="border border-purple-300 flex text-white m-auto w-full h-full rounded-3xl p-5">
               {/* Content Container */}
