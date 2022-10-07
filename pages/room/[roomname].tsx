@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import Layout from '../../components/layout/main'
 import ChatPop from '../../components/chat/ChatPop'
+import Container from '../../components/layout/container'
 
 import { useSocket } from '../../context/socket.context'
 
@@ -52,7 +53,7 @@ const ChatRoom: NextPage = () => {
   }
 
   return (
-    <div className="bg-black h-[calc(100vh-64px)]">
+    <Container>
       <Layout>
         <div className="py-24">
           <div className="p-10 border border-purple-300 rounded-3xl m-14">
@@ -93,7 +94,7 @@ const ChatRoom: NextPage = () => {
           </div>
         </div>
       </Layout>
-    </div>
+    </Container>
   )
 }
 
