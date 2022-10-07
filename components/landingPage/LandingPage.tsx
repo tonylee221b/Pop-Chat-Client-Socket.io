@@ -27,7 +27,7 @@ const LandingPage: NextPage = () => {
         </div>
         <div className="md:basis-1/5"></div>
         <motion.div
-          className="absolute right-0 bottom-0 z-0"
+          className="absolute right-0 bottom-24 z-0"
           key="LandingImg"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.7 } }}
