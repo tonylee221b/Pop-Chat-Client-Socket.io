@@ -58,7 +58,7 @@ const ChatRoom: NextPage = () => {
       <Layout>
         <ChatLayout>
           {/* Content Container */}
-          <div className="m-auto w-full h-full flex flex-col">
+          <div className="m-auto w-full h-full flex flex-col text-white">
             {/* Title */}
             <div className="flex items-center m-3">
               <div className="grow">

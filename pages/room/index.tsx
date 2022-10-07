@@ -49,72 +49,74 @@ const Room: NextPage = () => {
     <Container>
       <Layout>
         <ChatLayout>
-          {/* Header */}
-          <div className="flex">
-            <div className="grow">
-              <p className="text-white text-3xl">Rooms</p>
+          <div className="w-full min-h-0 flex flex-col">
+            {/* Header */}
+            <div className="flex">
+              <div className="grow">
+                <p className="text-white text-3xl">Rooms</p>
+              </div>
+              <button
+                className="btn flex items-center justify-center disabled:text-gray-400 disabled:cursor-default"
+                onClick={() => {
+                  setIsCreateClicked(!isCreateClicked)
+                }}
+                disabled={isOpen}
+              >
+                <HiOutlinePlus className="mr-2" />
+                Create
+              </button>
             </div>
-            <button
-              className="btn flex items-center justify-center disabled:text-gray-400 disabled:cursor-default"
-              onClick={() => {
-                setIsCreateClicked(!isCreateClicked)
-              }}
-              disabled={isOpen}
-            >
-              <HiOutlinePlus className="mr-2" />
-              Create
-            </button>
-          </div>
 
-          {/* Room List */}
-          <div className="flex relative grow pt-10 px-5">
-            {!isCreateClicked && rooms && rooms.length > 0 ? (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full h-full">
-                {rooms.map((room: Room) => (
-                  <div onClick={() => handleJoinClick(room)} key={nanoid()}>
-                    <RoomCard room={room} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div
-                className={`text-white text-xl font-light my-auto mx-auto ${
-                  isCreateClicked ? 'hidden' : ''
-                }`}
-              >
-                <p>No Rooms yet...</p>
-              </div>
-            )}
+            {/* Room List */}
+            <div className="flex relative grow pt-10 px-5">
+              {!isCreateClicked && rooms && rooms.length > 0 ? (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full h-full">
+                  {rooms.map((room: Room) => (
+                    <div onClick={() => handleJoinClick(room)} key={nanoid()}>
+                      <RoomCard room={room} />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div
+                  className={`text-white text-xl font-light my-auto mx-auto ${
+                    isCreateClicked ? 'hidden' : ''
+                  }`}
+                >
+                  <p>No Rooms yet...</p>
+                </div>
+              )}
 
-            {/* CreateRoom */}
-            <motion.div
-              initial={false}
-              animate={isCreateClicked ? 'open' : 'closed'}
-              className={`flex ${isCreateClicked ? 'grow' : ''}`}
-            >
-              <motion.div
-                variants={variants}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <CreateRoom setIsCreateClicked={setIsCreateClicked} />
-              </motion.div>
-            </motion.div>
-
-            {/* CreateUser */}
-            {rooms && clickedRoom && (
+              {/* CreateRoom */}
               <motion.div
                 initial={false}
-                animate={isOpen ? 'open' : 'closed'}
-                className={`flex ${isOpen ? 'grow' : ''}`}
+                animate={isCreateClicked ? 'open' : 'closed'}
+                className={`flex ${isCreateClicked ? 'grow' : ''}`}
               >
                 <motion.div
                   variants={variants}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 >
-                  <CreateUser roomname={clickedRoom} setIsOpen={setIsOpen} />
+                  <CreateRoom setIsCreateClicked={setIsCreateClicked} />
                 </motion.div>
               </motion.div>
-            )}
+
+              {/* CreateUser */}
+              {rooms && clickedRoom && (
+                <motion.div
+                  initial={false}
+                  animate={isOpen ? 'open' : 'closed'}
+                  className={`flex ${isOpen ? 'grow' : ''}`}
+                >
+                  <motion.div
+                    variants={variants}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                  >
+                    <CreateUser roomname={clickedRoom} setIsOpen={setIsOpen} />
+                  </motion.div>
+                </motion.div>
+              )}
+            </div>
           </div>
         </ChatLayout>
       </Layout>
