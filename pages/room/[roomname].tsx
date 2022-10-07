@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/layout/main'
 import ChatPop from '../../components/chat/ChatPop'
 import Container from '../../components/layout/container'
+import ChatLayout from '../../components/layout/chatLayout'
 
 import { useSocket } from '../../context/socket.context'
 
@@ -55,65 +56,59 @@ const ChatRoom: NextPage = () => {
   return (
     <Container>
       <Layout>
-        <div className="flex h-full py-32">
-          {/* ChatRoom Container */}
-          <div className="flex max-h-[500px] md:max-h-[500px] lg:max-h-[600px] my-auto mx-44 md:mx-52 lg:mx-64 w-full h-full">
-            {/* ChatRoom Outline */}
-            <div className="border-[3px] border-purple-300 flex text-white m-auto w-full h-full rounded-3xl p-5">
-              {/* Content Container */}
-              <div className="m-auto w-full h-full flex flex-col">
-                {/* Title */}
-                <div className="flex items-center m-3">
-                  <div className="grow">
-                    <p className="text-purple-400 text-lg font-bold">
-                      Roomname: {roomname}
-                    </p>
-                  </div>
-                  <div
-                    className="text-white bg-red-500 px-3 py-1 rounded-lg hover:cursor-pointer hover:scale-105 transition-transform duration-75"
-                    onClick={handleLeaveClick}
-                  >
-                    Leave Room
+        <ChatLayout>
+          {/* Content Container */}
+          <div className="m-auto w-full h-full flex flex-col">
+            {/* Title */}
+            <div className="flex items-center m-3">
+              <div className="grow">
+                <p className="text-purple-400 text-lg font-bold">
+                  Roomname: {roomname}
+                </p>
+              </div>
+              <div
+                className="text-white bg-red-500 px-3 py-1 rounded-lg hover:cursor-pointer hover:scale-105 transition-transform duration-75"
+                onClick={handleLeaveClick}
+              >
+                Leave Room
+              </div>
+            </div>
+
+            {/* Chat Container */}
+            <div className="flex flex-col h-full min-h-0 mt-5 bg-gray-800 rounded-3xl">
+              {/* Chat Window */}
+              <div className="w-full flex flex-col h-full">
+                {/* Chat */}
+                <div className="overflow-auto scrollbar-hide flex flex-col grow mt-2 mx-2 rounded-t-2xl">
+                  <div className="grow p-2">
+                    <ChatPop />
                   </div>
                 </div>
 
-                {/* Chat Container */}
-                <div className="flex flex-col h-full min-h-0 mt-5 bg-gray-800 rounded-3xl">
-                  {/* Chat Window */}
-                  <div className="w-full flex flex-col h-full">
-                    {/* Chat */}
-                    <div className="overflow-auto scrollbar-hide flex flex-col grow mt-2 mx-2 rounded-t-2xl">
-                      <div className="grow p-2">
-                        <ChatPop />
-                      </div>
-                    </div>
-
-                    {/* Form */}
-                    <div>
-                      <form className="flex rounded-b-3xl bg-gray-600">
-                        <textarea
-                          id="message"
-                          rows={4}
-                          name="message"
-                          className="w-full bg-gray-600 p-5 rounded-b-3xl outline-none text-gray-100 resize-none"
-                          placeholder="Your message..."
-                          onKeyDown={(e) => submitOnEnter(e)}
-                        ></textarea>
-                        <button
-                          type="submit"
-                          className="bg-gray-500 text-white px-10 m-3 rounded-3xl drop-shadow-md hover:cursor-pointer hover:drop-shadow-2xl"
-                          onClick={handleMessageSubmit}
-                        >
-                          SEND
-                        </button>
-                      </form>
-                    </div>
-                  </div>
+                {/* Form */}
+                <div>
+                  <form className="flex rounded-b-3xl bg-gray-600">
+                    <textarea
+                      id="message"
+                      rows={4}
+                      name="message"
+                      className="w-full bg-gray-600 p-5 rounded-b-3xl outline-none text-gray-100 resize-none"
+                      placeholder="Your message..."
+                      onKeyDown={(e) => submitOnEnter(e)}
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="bg-gray-500 text-white px-10 m-3 rounded-3xl drop-shadow-md hover:cursor-pointer hover:drop-shadow-2xl"
+                      onClick={handleMessageSubmit}
+                    >
+                      SEND
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </ChatLayout>
       </Layout>
     </Container>
   )
