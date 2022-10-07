@@ -47,7 +47,7 @@ const Room: NextPage = () => {
   return (
     <Container>
       <Layout>
-        <div className="pt-32">
+        <div className="pt-32 mx-32 md:mx-52">
           <div className="border border-purple-300 rounded-3xl p-5 max-h-[900px] min-h-[50vh] flex flex-col">
             {/* Header */}
             <div className="flex">
