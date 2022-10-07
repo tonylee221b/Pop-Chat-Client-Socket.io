@@ -62,7 +62,7 @@ const ChatRoom: NextPage = () => {
             {/* Title */}
             <div className="flex items-center m-3">
               <div className="grow">
-                <p className="text-purple-400 text-lg font-bold">
+                <p className="text-purple-400 text-2xl font-bold">
                   Roomname: {roomname}
                 </p>
               </div>
