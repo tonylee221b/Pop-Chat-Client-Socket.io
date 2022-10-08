@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { HiOutlinePlus } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import { nanoid } from 'nanoid'
@@ -38,7 +38,11 @@ const Room: NextPage = () => {
   const [isCreateClicked, setIsCreateClicked] = useState<boolean>(false)
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [clickedRoom, setClickedRoom] = useState<string>('')
-  const { rooms } = useSocket()
+  const { socket, rooms } = useSocket()
+
+  useEffect(() => {
+    socket.emit('display_rooms')
+  }, [socket])
 
   const handleJoinClick = (room: Room) => {
     setClickedRoom(room.roomname)
