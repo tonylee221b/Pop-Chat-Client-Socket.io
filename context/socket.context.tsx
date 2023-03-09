@@ -4,7 +4,9 @@ import { io, Socket } from 'socket.io-client'
 
 import { SOCKET_URL } from '../config/socket.config'
 
-export const socket = io(SOCKET_URL)
+export const socket = io(SOCKET_URL, {
+  withCredentials: true,
+})
 
 // Type declaration
 export interface Msg {
